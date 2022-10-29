@@ -1,2 +1,4 @@
 # setup-jenkins-ansible
-Jenkins Installation Script Ansible On Debian/Ubuntu Based 
+Ubah Hosts sesuai dengan nama server di inventory, lalu jalankan
+
+ansible-playbook ubuntu.yml

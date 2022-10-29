@@ -1,0 +1,22 @@
+- hosts: ubuntu
+  tasks:
+    - name: Install Java Versi 11
+      apt:
+        update_cache: yes
+        name: openjdk-11-jre
+        state: present
+
+    - name: Tambah keyring jenkins
+      shell: "curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo tee \
+  /usr/share/keyrings/jenkins-keyring.asc > /dev/null"
+
+    - name: Tambah repo jenkins
+      shell: "echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null"
+
+    - name: Install Jenkins
+      apt:
+        update_cache: yes
+        name: jenkins
+        state: present

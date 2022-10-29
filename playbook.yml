@@ -1,4 +1,5 @@
-- hosts: ubuntu
+- name: Jenkins Setup Ansible Script 
+  hosts: ubuntu
   tasks:
     - name: Install Java Versi 11
       apt:
